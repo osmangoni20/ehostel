@@ -1,0 +1,6 @@
+.dashboard h1 {
+  height: 60px;
+  padding: 10px;
+  font-size: 30px;
+  border-bottom: 2px solid rgb(207, 204, 204);
+}
