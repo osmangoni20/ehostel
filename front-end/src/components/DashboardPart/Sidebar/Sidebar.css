@@ -1,0 +1,25 @@
+.sidebar {
+  position: fixed;
+  width: 20%;
+  display: block;
+  background-color: black;
+  color: white;
+}
+.sidebar h1 {
+  height: 60px;
+  padding: 10px;
+  font-size: 30px;
+  border-bottom: 2px solid gray;
+  background-color: lightgray;
+}
+.sidebar li {
+  height: 45px;
+  list-style: none;
+  line-height: 15px;
+  padding: 8px;
+  font-size: 16px;
+  margin: 4px 0px;
+  border-bottom: 1px solid gray;
+  box-shadow: 5px gray;
+  align-items: center;
+}
