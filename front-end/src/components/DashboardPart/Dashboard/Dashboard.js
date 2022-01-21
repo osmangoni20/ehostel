@@ -4,7 +4,7 @@ import DashboardHeader from '../DashboardHeader/DashboardHeader';
 import CardData from '../fakeData';
 import Sidebar from '../Sidebar/Sidebar';
 import './Dashboard.css';
-const Dashboard = () => {
+const Dashboard = () => { 
     return (<div className='dashboard'>
         <DashboardHeader></DashboardHeader>
             <div className="grid grid-rows-1 grid-cols-5 mt-1">
