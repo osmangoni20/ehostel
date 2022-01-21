@@ -3,7 +3,7 @@ import activePerson from '../../../image/logo.jpg';
 const DashboardHeader = () => {
   return (
     <div className="shadow-md w-full d-block">
-      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
+      <div className="md:flex items-center justify-between bg-white py-2 md:px-10 px-7">
         <div
           className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
       text-gray-800"

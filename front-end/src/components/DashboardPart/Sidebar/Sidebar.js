@@ -17,10 +17,15 @@ let DashboardMenu = [
 const Sidebar = () => {
   return (
     <div className="sidebar h-screen">
+      <div className="flex items-center dashboardlogo">
+      <span className="text-2xl pt-2 pr-1 text-black">
+      <ion-icon  name="grid-outline"></ion-icon>
+      </span>
       <h1>Dashboard</h1>
+      </div>
       {DashboardMenu.map((menu) => (
         <Link to={menu.link}>
-          <li className="flex justify-between px-2">
+          <li className="flex justify-between px-2 hover:bg-sky-700">
             <div className=" items-center flex">
               <ion-icon  name={menu.icon}></ion-icon>
               <span className="pl-1">{menu.name}</span>
