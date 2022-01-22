@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import CostChart from "../CostChart/CostChart";
 import DashboardCard from "../DashboardCard/DashboardCard";
 import DashboardHeader from "../DashboardHeader/DashboardHeader";
 import { CardData, NewNotice } from "../fakeData";
@@ -16,21 +17,21 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <DashboardHeader></DashboardHeader>
-      
+
       <div className="flex">
         <aside className="h-screen sticky top-0">
-        <Sidebar></Sidebar>
+          <Sidebar></Sidebar>
         </aside>
-        
+
         <main>
-        <div className="active-menu flex justify-between items-center">
-        <Link to="/">
-        <h2>Dashboard</h2>
-        </Link>
-        <Link to="/home">
-        <h2>Home</h2>
-        </Link>
-        </div>
+          <div className="active-menu flex justify-between items-center">
+            <Link to="/">
+              <h2>Dashboard</h2>
+            </Link>
+            <Link to="/home">
+              <h2>Home</h2>
+            </Link>
+          </div>
           <div className="flex flex-wrap justify-between mt-5">
             {CardData.map((cardData) => (
               <DashboardCard key={cardData.id} card={cardData}></DashboardCard>
@@ -66,8 +67,8 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-black">
-              <h1>Daily Cost</h1>
+            <div className="bg-black border-2 border-gray-100">
+              <CostChart></CostChart>
             </div>
           </div>
         </main>

@@ -13,11 +13,13 @@ main {
   border-bottom: 2px solid rgb(207, 204, 204);
 }
 .NewNotice {
+  height: 311px;
   border: 2px solid lightgray;
   box-shadow: 5px 5px 5px rgb(230, 227, 227);
   border-radius: 2px;
 }
-.NewNotice .noticeHeader {
+.NewNotice .noticeHeader,
+.chartHeader {
   background-color: rgb(99, 223, 212);
   padding: 8px;
   font-size: 20px;
