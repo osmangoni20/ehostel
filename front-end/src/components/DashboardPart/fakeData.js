@@ -1,4 +1,22 @@
-const CardData=[
+export const NewNotice=[
+    {
+        id:1,
+        header:" Our hostel will be closed from 5th of next month...",
+        date:"28-02-2022"
+    },
+    {
+        id:2,
+        header:" Our hostel will be closed from 5th of next month...",
+        date:"25-02-2022"
+    },
+    {
+        id:3,
+        header:" Our hostel will be closed from 5th of next month...",
+        date:"15-02-2022"
+    }
+]
+
+export const CardData=[
     {
         id:1,
         image:"https://i.ibb.co/7z8jhv7/persons-removebg-preview.png",
@@ -32,4 +50,3 @@ const CardData=[
 
     },
 ]
-export default CardData;

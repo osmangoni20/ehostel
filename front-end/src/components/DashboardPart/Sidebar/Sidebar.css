@@ -1,15 +1,11 @@
 .sidebar {
-  position: fixed;
-  width: 20%;
-  display: block;
   background-color: black;
   color: white;
 }
-.sidebar h1 {
+.dashboardlogo {
   height: 60px;
   padding: 10px;
-  font-size: 30px;
-  border-bottom: 2px solid gray;
+  font-size: 25px;
   background-color: lightgray;
 }
 .sidebar li {
