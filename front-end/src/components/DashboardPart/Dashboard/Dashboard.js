@@ -19,7 +19,7 @@ const Dashboard = () => {
       <DashboardHeader></DashboardHeader>
 
       <div className="flex">
-        <aside className="h-screen sticky top-0">
+        <aside className="h-screen sticky top-0 overflow-hidden">
           <Sidebar></Sidebar>
         </aside>
 
@@ -74,14 +74,6 @@ const Dashboard = () => {
         </main>
       </div>
 
-      {/* <div className="grid grid-rows-1 grid-cols-5 mt-1">
-        <div class="col-span-1 overflow-y-scroll">
-          <Sidebar></Sidebar>
-        </div>
-        <div class="col-span-4 px-8">
-         
-        </div>
-      </div> */}
     </div>
   );
 };
