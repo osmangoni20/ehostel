@@ -1,0 +1,7 @@
+.menuHeder {
+  height: 60px;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  border-bottom: 2px solid rgb(207, 204, 204);
+}
