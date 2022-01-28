@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from './Button'
 
-const Header = () => {
+const Navbar = () => {
   let Links = [
     { name: 'HOME', link: '/' },
     { name: 'SERVICE', link: '/' },
@@ -55,4 +55,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Navbar
