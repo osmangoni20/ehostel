@@ -1,10 +1,12 @@
 import React from 'react'
-import Navbar from './Navbar'
+import Navbar from './Navbar/Navbar'
+import Service from './Service/Service'
 
 const Home = () => {
   return (
     <>
-      <Navbar />
+          <Navbar />
+          <Service />
     </>
   )
 }

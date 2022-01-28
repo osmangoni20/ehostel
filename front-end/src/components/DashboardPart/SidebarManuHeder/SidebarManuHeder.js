@@ -5,7 +5,7 @@ const SidebarManuHeder = () => {
     return (
        <div className='flex justify-between items-center menuHeder'>
            <h5>Dashboard Menu</h5>
-           <Link to={'/home'}>
+           <Link to={'/'}>
            <h5>Home</h5>
            </Link>
        </div>
