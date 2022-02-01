@@ -30,16 +30,16 @@ const Admission = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid grid-cols-3 gap-3">
                 
-                <div class="input-icons">
-                  <h5>Full Name</h5>
+                <div class="input-icons"> 
+                  <h5>Full Name </h5>
                   <i class="fa fa-user icon"></i>
                   <input placeholder="Full Name"
                     className="input-filed"
                     {...register("full_name", { required: true })}
-                  />
+                  /> 
                   {errors.exampleRequired && (
                     <span style={{color:"red"}}>This field is required</span>
-                  )}
+                  )} 
                 </div>
 
                 <div class="input-icons">
