@@ -1,12 +1,20 @@
 import React from 'react'
-import Navbar from './Navbar/Navbar'
-import Service from './Service/Service'
+import Header from './Header'
+import Slider from './Slider/Slider'
+import Feature from './Feature/Feature'
+import Staff from './Staff/Staff'
+import Contact from './Contact/Contact'
+import Footer from './Footer/Footer'
 
 const Home = () => {
   return (
     <>
-          <Navbar />
-          <Service />
+      <Header />
+      <Slider />
+      <Feature />
+      <Staff />
+      <Contact />
+      <Footer />
     </>
   )
 }

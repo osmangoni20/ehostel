@@ -1,12 +1,9 @@
 import React from 'react'
 
-const Button = (props) => {
+const Button = () => {
   return (
-    <button
-      className='bg-indigo-600 text-white font-[Poppins] py-2 px-6 rounded md:ml-8 hover:bg-indigo-400 
-    duration-500'
-    >
-      {props.children}
+    <button className='inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0'>
+      Log In
     </button>
   )
 }
