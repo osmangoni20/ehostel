@@ -4,7 +4,6 @@ import SidebarData from "./SidebarData";
 import SubMenu from "./SubMenu";
 
 const Sidebar = () => {
-    
   return (
     <div className="sidebar h-screen">
       <div className="flex items-center dashboardlogo">
@@ -13,7 +12,7 @@ const Sidebar = () => {
         </span>
         <h1>Dashboard</h1>
       </div>
-      {SidebarData.map((menu,index) => (
+      {SidebarData.map((menu, index) => (
         <SubMenu item={menu} key={index}></SubMenu>
       ))}
     </div>
