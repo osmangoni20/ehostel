@@ -1,0 +1,54 @@
+aside {
+  width: 20%;
+}
+main {
+  width: 80%;
+  padding: 0px 35px;
+}
+.dashboard .active-menu {
+  height: 60px;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  border-bottom: 2px solid rgb(207, 204, 204);
+}
+.NewNotice {
+  height: 311px;
+  border: 2px solid lightgray;
+  box-shadow: 5px 5px 5px rgb(230, 227, 227);
+  border-radius: 2px;
+}
+.NewNotice .noticeHeader,
+.chartHeader {
+  background-color: rgb(99, 223, 212);
+  padding: 8px;
+  font-size: 20px;
+}
+.NewNotice .noticeBody {
+  padding: 8px;
+  background-color: white;
+}
+.noticeBody li {
+  list-style: none;
+}
+.NewNotice .singleNotice {
+  background-color: rgb(250, 188, 198);
+  padding: 5px;
+  margin: 3px 0px;
+  color: rgba(0, 0, 0, 0.856);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.singleNotice .noticeDate {
+  color: rgb(52, 158, 158);
+  padding-bottom: 1px;
+}
+.NewNotice .noticeFooter {
+  background-color: rgb(243 238 238);
+  padding: 8px;
+  font-size: 15px;
+}
+.noticeFooter h5 {
+  font-weight: 600;
+}
