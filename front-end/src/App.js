@@ -1,8 +1,9 @@
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import Dashboard from './components/DashboardPart/Dashboard/Dashboard'
-import Admission from './components/DashboardPart/StudentManage/Admission/Admission'
-import Home from './components/Homepage/Home'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Dashboard from './components/DashboardPart/Dashboard/Dashboard';
+import Admission from './components/DashboardPart/StudentManage/Admission/Admission';
+import Home from './components/Homepage/Home';
 
 function App() {
   return (
