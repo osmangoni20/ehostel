@@ -1,5 +1,4 @@
 import React from 'react'
-import Dashboard from './../../DashboardPart/Dashboard/Dashboard'
 
 const Navbar = () => {
   return (
