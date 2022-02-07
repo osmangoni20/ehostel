@@ -31,11 +31,11 @@ const SidebarData = [
 
       {
         name: "Student List",
-        link: "/member_list",
+        link: "/student_list",
       },
       {
-        name: "Seat Alocation",
-        link: "/seat_alocation",
+        name: "Seat Allocation",
+        link: "/seat_allocation",
       },
     ],
     icon: "people-outline",
