@@ -1,10 +1,8 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faAddressCard,
-  faPhone,
-  faEnvelope,
+  faAddressCard, faEnvelope, faPhone
 } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react'
 
 const Contact = () => {
   return (

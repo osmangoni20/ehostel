@@ -1,10 +1,10 @@
 import React from 'react'
+import Contact from './Contact/Contact'
+import Feature from './Feature/Feature'
+import Footer from './Footer/Footer'
 import Header from './Header'
 import Slider from './Slider/Slider'
-import Feature from './Feature/Feature'
 import Staff from './Staff/Staff'
-import Contact from './Contact/Contact'
-import Footer from './Footer/Footer'
 
 const Home = () => {
   return (
