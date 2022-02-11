@@ -9,8 +9,9 @@ import '../Style/tableStyle.css';
 import "./DataInput.css";
 const DataInputAndList = ({ AllData }) => {
   // tableHeader,tableData,inputType
-  const [tableData, setTableData] = useState(AllData.TableData);
-  const submitValue = AllData.inputFieldData[0].search ? "Search" : "Submit";
+  const [tableData, setTableData] = useState(AllData.tableData);
+  const submitValue =AllData.inputFieldData&& AllData.inputFieldData[0].search ? "Search" : "Submit";
+  console.log(AllData)
   const {
     register,
     handleSubmit,
@@ -19,7 +20,7 @@ const DataInputAndList = ({ AllData }) => {
   const onSubmit = (submitData) => {
     setTableData([...tableData, submitData]);
   };
-
+console.log(tableData)
   const HandleDelete = (id) => {
     const ActiveData = AllData.TableData.filter((item) => item.id !== id);
 

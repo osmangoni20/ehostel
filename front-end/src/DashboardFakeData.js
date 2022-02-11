@@ -175,24 +175,30 @@ export const DashboardFakeData =
         ],
         tableData:[
             {
+                id:1,
                 type:"Net Bill",
                 amount:"500 Tk",
                 details:"Internet Connection Bill",
                 date:"5/2/2022",
+                action:true
                 
             },
             {
+                id:2,
                 type:"Net Bill",
                 amount:"500 Tk",
                 details:"Internet Connection Bill",
                 date:"5/2/2022",
+                action:true
                 
             },
             {
+                id:3,
                 type:"Net Bill",
                 amount:"500 Tk",
                 details:"Internet Connection Bill",
                 date:"5/2/2022",
+                action:true
             },
         ]
         ,
