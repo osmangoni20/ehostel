@@ -9,6 +9,7 @@ const PaymentAdd = () => {
             name:"Student Name",
             registerName:"studentName",
             placeholderName:"Student Name",
+            icon:"fa fa-user icon",
             inputType:"text",
             icon:""
         },
@@ -16,6 +17,7 @@ const PaymentAdd = () => {
             name:"Amount",
             registerName:"amount",
             placeholderName:"Amount",
+            icon:"fa fa-user icon",
             inputType:"number"
             ,
             icon:""
@@ -24,12 +26,13 @@ const PaymentAdd = () => {
             name:"Paid By",
             registerName:"paidBy",
             placeholderName:"Paid By",
+            icon:"fa fa-user icon",
             selectOptions:[
                 {name:"BKash",value:"bkash"},
                 {name:"Rocket",value:"rocket"},
                 {name:"Bank",value:"bank"},
             ],
-            icon:""
+           
         },
         
         {
@@ -37,14 +40,14 @@ const PaymentAdd = () => {
             registerName:"paymentUniqNumber",
             placeholderName:"Mobile No/Transaction Id",
             inputType:"text",
-            icon:""
+            icon:"fa fa-user icon",
         },
         {
             name:"Payment Date",
             registerName:"paymentdate",
             placeholderName:"Payment Date",
             inputType:"date",
-            icon:""
+            icon:null
         }
     ]
     header.menuOptionHeader=

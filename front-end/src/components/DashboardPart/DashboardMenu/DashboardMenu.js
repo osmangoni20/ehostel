@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { DashboardFakeData } from '../../../DashboardFakeData';
 import DataInputAndList from '../DataInputAndList/DataInputAndList';
 
-const Room = () => {
+const DashboardMenu = () => {
     const {route}=useParams();
     const AllData=DashboardFakeData[route]
    console.log(AllData)
@@ -14,4 +14,4 @@ const Room = () => {
     );
 };
 
-export default Room;
+export default DashboardMenu;

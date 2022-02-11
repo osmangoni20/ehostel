@@ -3,23 +3,23 @@ const SidebarData = [
     name: "Room Manage",
     icon: "bed-outline",
     subOptions: [
-      { name: "Room", link: "/room" },
+      { name: "Room", link: "/dashboard/room" },
     ],
   },
   {
     name: "Cost Manage",
     icon: "calculator-outline",
     subOptions: [
-      { name: "Add New ", link: "/add_new_cost" },
-      { name: "List View", link: "/cost_list" },
+      { name: "Add New ", link: "/dashboard/add_new_cost" },
+      { name: "List View", link: "/dashboard/cost_list" },
     ],
   },
   {
     name: "Meal Manage",
     icon: "fast-food-outline",
     subOptions: [
-      { name: "Add New Meal", link: "/add_new_meal" },
-      { name: "Meal List", link: "/meal_list" },
+      { name: "Add New Meal", link: "/dashboard/add_new_meal" },
+      { name: "Meal List", link: "/dashboard/meal_list" },
     ],
   },
   {
@@ -30,15 +30,15 @@ const SidebarData = [
 
       {
         name: "Student List",
-        link: "/student_list",
+        link: "/dashboard/student_list",
       },
       {
         name: "Seat Allocation",
-        link: "/seat_allocation",
+        link: "/dashboard/seat_allocation",
       },
       {
         name: "Deposit",
-        link: "/student_deposit",
+        link: "/dashboard/student_deposit",
       },
     ],
     icon: "people-outline",
@@ -48,35 +48,35 @@ const SidebarData = [
     name: "Students Payment",
     icon: "logo-paypal",
     subOptions: [
-      { name: "Add ", link: "/add_payment" },
-      { name: "View", link: "/payment_list" },
+      { name: "Add ", link: "/dashboard/add_payment" },
+      { name: "View", link: "/dashboard/payment_list" },
     ],
   },
   {
     name: "Employee Manage",
-    link: "/employee_manage",
+    link: "/dashboard/employee_manage",
     icon: "people-circle-outline",
   },
   {
     name: "Bill Manage",
     icon: "newspaper-outline",
     subOptions: [
-      { name: "Add New ", link: "/add_bill" },
-      { name: "List View", link: "/bill_list" },
+      { name: "Add New ", link: "/dashboard/add_bill" },
+      { name: "List View", link: "/dashboard/bill_list" },
     ],
   },
   {
     name: "Notice Board",
     icon: "notifications-outline",
     subOptions: [
-      // { name: "Add Notice ", link: "/add_notice" },
-      { name: "Notice", link: "/notice" },
+      // { name: "Add Notice ", link: "/dashboard/add_notice" },
+      { name: "Notice", link: "/dashboard/notice" },
     ],
   },
   {
     name: "Admin",
     subOptions: false,
-    link: "/admin",
+    link: "/dashboard/admin",
     icon: "person-add-outline",
   },
 ];

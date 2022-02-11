@@ -12,7 +12,7 @@ const PaymentView = () => {
             registerName:"studentName",
             placeholderName:"Student Name",
             inputType:"text",
-            icon:"",
+            icon:"fa fa-user icon",
             search:true
         },
     ]

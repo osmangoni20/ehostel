@@ -9,17 +9,20 @@ const CostAdd = () => {
             name:"Cost Type",
             registerName:"costType",
             placeholderName:"Cost Type",
+            icon:"fa fa-user icon",
             inputType:"text"
         },
         {
             name:"Amount",
             registerName:"amount",
             placeholderName:"Amount",
+            icon:"fa fa-user icon",
             inputType:"number"
         },
         {
             name:"Cost Details",
             registerName:"costDetails",
+            icon:"fa fa-user icon",
             placeholderName:"Cost Details",
             inputType:"text"
         },

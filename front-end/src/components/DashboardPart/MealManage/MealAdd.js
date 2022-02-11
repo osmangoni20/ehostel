@@ -8,12 +8,16 @@ const MealAdd = () => {
         {
             name:"Student Name",
             registerName:"studentName",
+            icon:"fa fa-user icon",
             placeholderName:"Student Name",
+            icon:"fa fa-user icon",
             inputType:"text"
         },
         {
             name:"Number Of Meal",
+            icon:"fa fa-user icon",
             registerName:"totalMeal",
+            icon:"fa fa-user icon",
             placeholderName:"Total Meal",
             inputType:"number"
         },
