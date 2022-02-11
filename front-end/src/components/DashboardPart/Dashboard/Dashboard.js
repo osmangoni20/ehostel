@@ -5,7 +5,7 @@ import DashboardCard from "../DashboardCard/DashboardCard";
 import DashboardHeader from "../DashboardHeader/DashboardHeader";
 import { CardData, NewNotice } from "../fakeData";
 import Sidebar from "../Sidebar/Sidebar";
-import SidebarManuHeder from "../SidebarManuHeder/SidebarManuHeder";
+import SidebarManuHeder from "../SidebarManuHeder/SidebarMenuHeder";
 import "./Dashboard.css";
 const Dashboard = () => {
   const [newNotice, setNewNotice] = useState();
@@ -14,7 +14,7 @@ const Dashboard = () => {
   }, []);
 
   // setNewNotice()
-
+const menuHeader="Dashboard";
   return (
     <div className="dashboard">
       <DashboardHeader></DashboardHeader>
@@ -25,7 +25,7 @@ const Dashboard = () => {
         </aside>
 
         <main>
-          <SidebarManuHeder></SidebarManuHeder>
+          <SidebarManuHeder menuHeader={menuHeader}></SidebarManuHeder>
           <div className="flex flex-wrap justify-between mt-5">
             {CardData.map((cardData) => (
               <DashboardCard key={cardData.id} card={cardData}></DashboardCard>

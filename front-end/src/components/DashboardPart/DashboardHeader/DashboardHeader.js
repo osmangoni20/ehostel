@@ -9,9 +9,20 @@ const DashboardHeader = () => {
       text-gray-800"
         >
           <span className="text-3xl text-indigo-600 mr-1 pt-2">
-            <ion-icon name="home"></ion-icon>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            stroke='currentColor'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            class='w-10 h-10 text-white p-2 bg-indigo-500 rounded-full'
+            viewBox='0 0 24 24'
+          >
+            <path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'></path>
+          </svg>
           </span>
-          eHostel
+          <span className="pt-2 text-xl font-normal">eHostel</span>
         </div>
         <div className="flex items-center">
             <img style={{

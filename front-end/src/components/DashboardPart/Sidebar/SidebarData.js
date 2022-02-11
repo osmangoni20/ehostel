@@ -3,8 +3,7 @@ const SidebarData = [
     name: "Room Manage",
     icon: "bed-outline",
     subOptions: [
-      { name: "Add New ", link: "add_room" },
-      { name: "List View", link: "room_list" },
+      { name: "Room", link: "room" },
     ],
   },
   {
@@ -19,8 +18,8 @@ const SidebarData = [
     name: "Meal Manage",
     icon: "fast-food-outline",
     subOptions: [
-      { name: "Add New Meal", link: "add_new_meal" },
-      { name: "Meal List", link: "meal_list" },
+      { name: "Add New Meal", link: "/add_new_meal" },
+      { name: "Meal List", link: "/meal_list" },
     ],
   },
   {
@@ -37,6 +36,10 @@ const SidebarData = [
         name: "Seat Allocation",
         link: "/seat_allocation",
       },
+      {
+        name: "Deposit",
+        link: "/student_deposit",
+      },
     ],
     icon: "people-outline",
   },
@@ -45,8 +48,8 @@ const SidebarData = [
     name: "Students Payment",
     icon: "logo-paypal",
     subOptions: [
-      { name: "Add ", link: "add_payment" },
-      { name: "View", link: "payment_list" },
+      { name: "Add ", link: "/add_payment" },
+      { name: "View", link: "/payment_list" },
     ],
   },
   {
@@ -58,22 +61,22 @@ const SidebarData = [
     name: "Bill Manage",
     icon: "newspaper-outline",
     subOptions: [
-      { name: "Add New ", link: "add_bill" },
-      { name: "List View", link: "bill_list" },
+      { name: "Add New ", link: "/add_bill" },
+      { name: "List View", link: "/bill_list" },
     ],
   },
   {
     name: "Notice Board",
     icon: "notifications-outline",
     subOptions: [
-      { name: "Add Notice ", link: "add_notice" },
-      { name: "Notice", link: "notice" },
+      // { name: "Add Notice ", link: "/add_notice" },
+      { name: "Notice", link: "/notice" },
     ],
   },
   {
-    name: "New Admin",
+    name: "Admin",
     subOptions: false,
-    link: "/add_admin",
+    link: "/admin",
     icon: "person-add-outline",
   },
 ];

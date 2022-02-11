@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import DashboardHeader from "../../DashboardHeader/DashboardHeader";
 import Sidebar from "../../Sidebar/Sidebar";
-import SidebarManuHeder from "../../SidebarManuHeder/SidebarManuHeder";
+import SidebarManuHeder from "../../SidebarManuHeder/SidebarMenuHeder";
 import '../../Style/inputStyle.css';
 import "./Admission.css";
 const Admission = () => {
@@ -12,6 +12,7 @@ const Admission = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
+  const menuHeader="Admission Information";
   return (
     <div>
       <DashboardHeader></DashboardHeader>
@@ -20,7 +21,7 @@ const Admission = () => {
           <Sidebar></Sidebar>
         </aside>
         <main>
-          <SidebarManuHeder></SidebarManuHeder>
+          <SidebarManuHeder menuHeader={menuHeader}></SidebarManuHeder>
           <div className="admission">
             <div className="admissionHeader flex items-center">
               <ion-icon name="people-outline"></ion-icon>

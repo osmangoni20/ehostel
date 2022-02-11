@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ManuHeder.css';
-const SidebarManuHeder = () => {
+const SidebarMenuHeder = ({menuHeader}) => {
     return (
        <div className='flex justify-between items-center menuHeder'>
-           <h5>Dashboard Menu</h5>
+           <h5>{menuHeader}</h5>
            <Link to={'/'}>
            <h5>Home</h5>
            </Link>
@@ -12,4 +12,4 @@ const SidebarManuHeder = () => {
     );
 };
 
-export default SidebarManuHeder;
+export default SidebarMenuHeder;

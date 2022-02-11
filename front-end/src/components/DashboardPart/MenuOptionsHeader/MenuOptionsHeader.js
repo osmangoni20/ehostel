@@ -1,10 +1,11 @@
 import React from 'react';
 import './MenuOptionheader.css';
-const MenuOptionsHeader = ({header}) => {
+const MenuOptionsHeader = ({menuOptionHeader}) => {
+    console.log(menuOptionHeader)
     return (
         <div className="optionsHeader flex items-center">
-              <ion-icon name="people-outline"></ion-icon>
-              <h6 className="text-xl px-2">{header}</h6>
+              <ion-icon name={menuOptionHeader.icon}></ion-icon>
+              <h6 className="text-base px-2">{menuOptionHeader.name}</h6>
         </div>
     );
 };
