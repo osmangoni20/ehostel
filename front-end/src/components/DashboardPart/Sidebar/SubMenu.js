@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SubMenu = ({ item }) => {
   const [showOptions, setShowOptions] = useState(false);
@@ -24,9 +25,9 @@ const SubMenu = ({ item }) => {
           {item.subOptions ? (
             <span className="pl-1">{item.name}</span>
           ) : (
-            <a href={item.link} className="pl-1">
+            <Link to={item.link} className="pl-1">
               {item.name}
-            </a>
+            </Link>
           )}
         </div>
         {item.subOptions &&
@@ -66,9 +67,9 @@ const SubMenu = ({ item }) => {
         item.subOptions.map((item, index) => {
           return (
             <li className="block hover:bg-gray-200 hover:text-black p-0 text-lg text-gray hover:#261e1e dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-              <a href={item.link} className="block px-10  text-xl ">
+              <Link to={item.link} className="block px-10  text-xl ">
                 {item.name}
-              </a>
+              </Link>
             </li>
           );
         })}

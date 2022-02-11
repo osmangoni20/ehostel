@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import DashboardHeader from '../DashboardHeader/DashboardHeader';
 import MenuOptionsHeader from '../MenuOptionsHeader/MenuOptionsHeader';
@@ -8,13 +8,25 @@ import '../Style/inputStyle.css';
 import './DataInput.css';
 const DataInputAndList = ({header,AllData}) => {
   // tableHeader,tableData,inputType
+  const [tableData,setTableData]=useState(AllData.TableData);
   const submitValue=AllData.inputFieldData[0].search?"Search":"Submit";
     const {
         register,
         handleSubmit,
         formState: { errors },
       } = useForm();
-      const onSubmit = (data) => console.log(data);
+      const onSubmit = (submitData) => {
+        setTableData([...tableData,submitData]);
+      };
+     
+      const HandleDelete=(id)=>{
+       const ActiveData= AllData.TableData.filter(item=>item.id!==id);
+     
+      setTableData(ActiveData);
+      }
+      const HandleEdit=(id)=>{
+        console.log(id);
+      }
     return (
         <div>
       <DashboardHeader></DashboardHeader>
@@ -98,20 +110,25 @@ const DataInputAndList = ({header,AllData}) => {
         ))}
       </thead>
       <tbody>
-        {AllData?.TableData?.map((data, index) => (
+        {
+        
+        tableData?.map((data, index) => (
           <tr key={index}>
-            {Object.keys(data).map((options) => (
-              <td>{data[options]}</td>
+            {Object.keys(data).map((options,index) => (
+              options!=="id"&&(
+           Object.keys(data).length-2>=index?<td>{data[options]}</td>:
+              
+             <td>
+             <span onClick={()=>HandleEdit(data.id)} className="edit-icon">
+               <ion-icon name="create-outline"></ion-icon>
+             </span>
+             <span onClick={()=>HandleDelete(data.id)} className="delete-icon">
+               <ion-icon name="trash-outline"></ion-icon>
+             </span>
+           </td>)
             ))}
 
-            <td>
-              <span className="edit-icon">
-                <ion-icon name="create-outline"></ion-icon>
-              </span>
-              <span className="delete-icon">
-                <ion-icon name="trash-outline"></ion-icon>
-              </span>
-            </td>
+            
           </tr>
         ))}
       </tbody>

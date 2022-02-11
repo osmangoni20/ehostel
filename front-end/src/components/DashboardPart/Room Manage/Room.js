@@ -26,16 +26,21 @@ const Room = () => {
     ]
     AllData.TableData=[
         {
+            id:1,
            blockNo:"de-202",
-           availableRoom:5
+           availableRoom:5,
+           action:true
         },
-        {
+        {id:2,
             blockNo:"ee-320",
-            availableRoom:2
+            availableRoom:2,
+            action:true
          },
          {
+            id:3,
             blockNo:"fe-202",
-            availableRoom:6
+            availableRoom:6,
+            action:true
          },
     ]
     header.menuOptionHeader=

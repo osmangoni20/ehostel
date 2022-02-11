@@ -3,15 +3,15 @@ const SidebarData = [
     name: "Room Manage",
     icon: "bed-outline",
     subOptions: [
-      { name: "Room", link: "room" },
+      { name: "Room", link: "/room" },
     ],
   },
   {
     name: "Cost Manage",
     icon: "calculator-outline",
     subOptions: [
-      { name: "Add New ", link: "add_new_cost" },
-      { name: "List View", link: "cost_list" },
+      { name: "Add New ", link: "/add_new_cost" },
+      { name: "List View", link: "/cost_list" },
     ],
   },
   {
