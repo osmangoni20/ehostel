@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import DashboardHeader from "../DashboardHeader/DashboardHeader";
 import MenuOptionsHeader from "../MenuOptionsHeader/MenuOptionsHeader";
@@ -9,21 +9,23 @@ import '../Style/tableStyle.css';
 import "./DataInput.css";
 const DataInputAndList = ({ AllData }) => {
   // tableHeader,tableData,inputType
-  const [tableData, setTableData] = useState(AllData.tableData);
+  const [tableData, setTableData] = useState([]);
   const submitValue =AllData.inputFieldData&& AllData.inputFieldData[0].search ? "Search" : "Submit";
-  console.log(AllData)
+  useEffect(()=>{
+    setTableData(AllData.tableData);
+  },[AllData.tableData])
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (submitData) => {
+    submitData.action=true;
     setTableData([...tableData, submitData]);
   };
-console.log(tableData)
+console.log(tableData,AllData.tableData);
   const HandleDelete = (id) => {
-    const ActiveData = AllData.TableData.filter((item) => item.id !== id);
-
+    const ActiveData = tableData.filter((item) => item.id !== id);
     setTableData(ActiveData);
   };
   const HandleEdit = (id) => {
@@ -117,7 +119,7 @@ console.log(tableData)
                     ))}
                   </thead>
                   <tbody>
-                    {AllData.tableData?.map((data, index) => (
+                    {tableData?.map((data, index) => (
                       <tr key={index}>
                         {Object.keys(data).map(
                           (options, index) =>

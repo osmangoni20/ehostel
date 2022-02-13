@@ -76,7 +76,14 @@ export const DashboardFakeData =
                     {name:"Bed 3",value:"B-3"},
                     {name:"Bed 4",value:"B-4"},
                 ]
-            },
+            },{
+                name:"Unique Id",
+                registerName:"id",
+                placeholderName:"Any Unique Id",
+                icon:"fa fa-user icon",
+                inputType:"text",
+                
+            }
         ],
     menuOptionHeader:{
         name:"Students Seat Allocation",icon:"people-outline"}
@@ -123,6 +130,7 @@ export const DashboardFakeData =
     }, 
     student_deposit:{
         inputFieldData:[
+            
             {
                 name:"Student Name",
                 registerName:"studentName",
@@ -139,7 +147,15 @@ export const DashboardFakeData =
                 inputType:"number"
               
             
-            }],
+            },{
+                name:"Unique Id",
+                registerName:"id",
+                placeholderName:"Any Unique Id",
+                icon:"fa fa-user icon",
+                inputType:"text",
+                
+            }
+        ],
         tableHeader:[
             "Name","Amount","Deposit Date","Action"
         ],
@@ -235,6 +251,13 @@ export const DashboardFakeData =
                 registerName:"date",
                 placeholderName:"Date",
                 inputType:"date"
+            },{
+                name:"Unique Id",
+                registerName:"id",
+                placeholderName:"Any Unique Id",
+                icon:"fa fa-user icon",
+                inputType:"text",
+                
             }
         ],
         menuOptionHeader:
@@ -287,6 +310,14 @@ export const DashboardFakeData =
                 placeholderName:"Payment Date",
                 inputType:"date",
                 icon:null
+            }
+            ,{
+                name:"Unique Id",
+                registerName:"id",
+                placeholderName:"Any Unique Id",
+                icon:"fa fa-user icon",
+                inputType:"text",
+                
             }
         ],
         menuOptionHeader:
@@ -384,6 +415,13 @@ export const DashboardFakeData =
                 placeholderName:"Notice Description",
                 textAria:true,
                 icon:null
+            },{
+                name:"Unique Id",
+                registerName:"id",
+                placeholderName:"Any Unique Id",
+                icon:"fa fa-user icon",
+                inputType:"text",
+                
             }
            
         ],
@@ -454,6 +492,13 @@ export const DashboardFakeData =
                 registerName:"date",
                 placeholderName:"Date",
                 inputType:"date"
+            },{
+                name:"Unique Id",
+                registerName:"id",
+                placeholderName:"Any Unique Id",
+                icon:"fa fa-user icon",
+                inputType:"text",
+                
             }
         ],
         menuOptionHeader:
@@ -484,6 +529,13 @@ export const DashboardFakeData =
                 registerName:"date",
                 placeholderName:"Date",
                 inputType:"date"
+            },{
+                name:"Unique Id",
+                registerName:"id",
+                placeholderName:"Any Unique Id",
+                icon:"fa fa-user icon",
+                inputType:"text",
+                
             }
         ],
         menuOptionHeader:
@@ -569,6 +621,13 @@ export const DashboardFakeData =
                 placeholderName:"Image",
                 inputType:"file",
                 icon:"fa fa-user icon",
+            },{
+                name:"Unique Id",
+                registerName:"id",
+                placeholderName:"Any Unique Id",
+                icon:"fa fa-user icon",
+                inputType:"text",
+                
             }
         ],
         tableHeader:[
@@ -620,7 +679,15 @@ export const DashboardFakeData =
         placeholderName: "Room No",
         inputType: "number",
         icon: "fa fa-user icon",
-      },
+      }
+      ,{
+        name:"Unique Id",
+        registerName:"id",
+        placeholderName:"Any Unique Id",
+        icon:"fa fa-user icon",
+        inputType:"text",
+        
+    }
     ],
     tableHeader: ["Block No", "Available Room", "Action"],
     tableData: [
@@ -667,6 +734,13 @@ export const DashboardFakeData =
                 placeholderName:"Email",
                 inputType:"email",
                 icon:""
+            },{
+                name:"Unique Id",
+                registerName:"id",
+                placeholderName:"Any Unique Id",
+                icon:"fa fa-user icon",
+                inputType:"text",
+                
             }
         ],
         tableHeader:[
