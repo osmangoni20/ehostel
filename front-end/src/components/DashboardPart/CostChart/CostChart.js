@@ -5,11 +5,11 @@ import {
   Legend,
   LinearScale,
   Title,
-  Tooltip,
+  Tooltip
 } from "chart.js";
 import React from "react";
 import { Bar } from "react-chartjs-2";
-
+import './CostChart.css';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -51,18 +51,18 @@ const options = {
   scales: {
     y: {
       ticks: {
-        color: "yellow",
+        // color: "yellow",
         font: {
           size: 12,
         },
       },
-      grid: {
-        color: "#243240",
-      },
+      // grid: {
+      //   color: "#243240",
+      // },
     },
     x: {
       ticks: {
-        color: "yellow",
+        // color: "yellow",
         font: {
           size: 12,
         },
@@ -73,7 +73,7 @@ const options = {
 
 function CostChart() {
   return (
-    <div>
+    <div className="p-3 ">
       <div className="chartHeader flex  items-center mb-2">
         <span className="pt-2">
           <ion-icon name="aperture-outline"></ion-icon>

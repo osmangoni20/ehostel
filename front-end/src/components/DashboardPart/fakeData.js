@@ -1,4 +1,4 @@
-export const NewNotice=[
+export const newNotice=[
     {
         id:1,
         header:" Our hostel will be closed from 5th of next month...",
@@ -16,7 +16,7 @@ export const NewNotice=[
     }
 ]
 
-export const CardData=[
+export const cardData=[
     {
         id:1,
         image:"https://i.ibb.co/7z8jhv7/persons-removebg-preview.png",

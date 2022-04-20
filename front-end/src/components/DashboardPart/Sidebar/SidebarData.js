@@ -1,5 +1,11 @@
 const SidebarData = [
   {
+    name: "Dashboard",
+    link: "/dashboard",
+    icon: "grid-outline",
+  },
+  
+  {
     name: "Room Manage",
     icon: "bed-outline",
     subOptions: [

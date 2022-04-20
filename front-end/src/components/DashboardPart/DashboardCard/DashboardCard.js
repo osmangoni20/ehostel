@@ -1,37 +1,61 @@
-import React from 'react';
-import './DashboardCard.css';
-const DashboardCard = ({card}) => {
-    const{total,name,bgColor,image}=card
-    console.log(image)
-    
-    return (
-        <div style={{backgroundColor:bgColor}}  className='dashboardCard'>
-            
-            <div className="cardText flex justify-between">
-                <div>
-                    <img style={{
-            
-                  height: "101px",
-                  width: "72px",
-                  borderRadius: "20px",
-                //   marginRight: "4px",
-                //   marginBottom: "3px"
-            }}  src={image} alt={`${name} icon`} />
-                </div>
-                <div>
-                    <h2>{total}</h2>
-                    <p>{name}</p>
-                </div>
-            </div>
-            <div className="cardFooter flex justify-between">
-                <h6 style={{color:bgColor}}>View Details</h6>
-                <span className='text-2xl ' style={{color:bgColor}}>
-                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
-                </span>
-                
-            </div>
+import React from "react";
+import "./DashboardCard.css";
+const DashboardCard = ({ card }) => {
+  const { total, name, image } = card;
+  console.log(image);
+  // style={{backgroundColor:bgColor}}
+  const dashboardCard= {
+    width: "240px",
+    padding: "10px",
+    borderRadius: "5px",
+    background: "linear-gradient(80deg, #ffb996 20%, #ff7c96)"
+  }
+  if(card.id===1){
+    dashboardCard.background="linear-gradient(80deg, #ffb996 20%, #ff7c96)"
+  }
+  else if(card.id===2){
+    dashboardCard.background="linear-gradient(80deg, #87C5F7 20%, #389BE9)"
+
+  }
+  else if(card.id===3){
+    dashboardCard.background="linear-gradient(80deg, #43D3BF 20%, #61D6C8)"
+
+  }
+  else{
+    dashboardCard.background="linear-gradient(80deg, #F7E279 20%, #FED45F)"
+  }
+  return (
+    <div style={dashboardCard} className="">
+      <div className="cardText flex justify-center items-center">
+        <div className="">
+          <h2>{total}</h2>
+          <h6>{name}</h6>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default DashboardCard;
+
+/* <div>
+          <img className="place-self-start"
+            style={{
+              height: "30px",
+              width: "30px",
+              borderRadius: "20px",
+              color: "white",
+              //   marginRight: "4px",
+              //   marginBottom: "3px"
+            }}
+            src={image}
+            alt={`${name} icon`}
+          />
+
+          <div className="cardFooter place-self-end">
+            {/* <h6 style={{color:bgColor}}>View Details</h6>
+           <span className="text-2xl " style={{ color: bgColor }}>
+              <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+             </span>
+          </div>
+         </div>*/
