@@ -22,7 +22,7 @@ const DashboardCard = ({ card }) => {
 
   }
   else{
-    dashboardCard.background="linear-gradient(80deg, #F7E279 20%, #FED45F)"
+    dashboardCard.background="linear-gradient(80deg, #FFC27C 20%, #FF9020)"
   }
   return (
     <div style={dashboardCard} className="">

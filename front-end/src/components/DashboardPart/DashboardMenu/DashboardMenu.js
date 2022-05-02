@@ -6,10 +6,10 @@ import DataInputAndList from '../DataInputAndList/DataInputAndList';
 const DashboardMenu = () => {
     const {route}=useParams();
     const AllData=DashboardFakeData[route]
-   console.log(AllData)
+//    console.log(AllData)
     return (
         <div>
-            <DataInputAndList  AllData={AllData}></DataInputAndList>
+            <DataInputAndList Submenu={route}  AllData={AllData}></DataInputAndList>
         </div>
     );
 };

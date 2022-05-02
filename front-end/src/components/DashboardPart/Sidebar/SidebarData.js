@@ -75,7 +75,7 @@ const SidebarData = [
     name: "Notice Board",
     icon: "notifications-outline",
     subOptions: [
-      // { name: "Add Notice ", link: "/dashboard/add_notice" },
+      { name: "Create Notice ", link: "/dashboard/create_notice" },
       { name: "Notice", link: "/dashboard/notice" },
     ],
   },

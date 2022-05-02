@@ -11,16 +11,16 @@ table thead th {
   font-weight: 600;
   text-align: center;
   padding: 8px;
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
 }
 table tbody tr {
   height: 20px;
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
 }
 table tbody tr td {
   font-size: 18px;
   padding: 8px;
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
 }
 .edit-icon {
   background-color: rgb(1 16 1);

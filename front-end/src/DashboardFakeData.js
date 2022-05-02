@@ -398,37 +398,14 @@ export const DashboardFakeData =
                
             },
         ],
-        inputFieldData:[
-            {
-                name:"Notice Title",
-                registerName:"noticeTitle",
-                placeholderName:"Notice Title",
-                textAria:false,
-                inputType:"text",
-                icon:"fa fa-user icon"
-              
-            },
-            
-            {
-                name:"Notice Description",
-                registerName:"noticeDescription",
-                placeholderName:"Notice Description",
-                textAria:true,
-                icon:null
-            },{
-                name:"Unique Id",
-                registerName:"id",
-                placeholderName:"Any Unique Id",
-                icon:"fa fa-user icon",
-                inputType:"text",
-                
-            }
-           
-        ],
+        
     menuOptionHeader:{
-        name:"Students Seat Allocation",icon:"people-outline"},
-       sidebarMenuHeader:"Seat Allocation"
+        name:"All Notice",icon:"people-outline"},
+       sidebarMenuHeader:"Notice"
     },
+
+    
+
     bill_list:{
         tableHeader:[
             "Name","Number Of Meal","Date","Action"

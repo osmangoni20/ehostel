@@ -7,7 +7,7 @@ import SidebarMenuHeder from "../SidebarManuHeder/SidebarMenuHeder";
 import "../Style/inputStyle.css";
 import '../Style/tableStyle.css';
 import "./DataInput.css";
-const DataInputAndList = ({ AllData }) => {
+const DataInputAndList = ({ AllData,Submenu }) => {
   // tableHeader,tableData,inputType
   const [tableData, setTableData] = useState([]);
   const submitValue =AllData.inputFieldData&& AllData.inputFieldData[0].search ? "Search" : "Submit";
@@ -43,6 +43,7 @@ console.log(tableData,AllData.tableData);
           <SidebarMenuHeder
             menuHeader={AllData.sidebarMenuHeader}
           ></SidebarMenuHeder>
+          <hr></hr>
           {/* Sub Menu Information */}
           <div className="submenuDetails">
             <MenuOptionsHeader
@@ -108,7 +109,7 @@ console.log(tableData,AllData.tableData);
               </div>
               <hr className="my-5"></hr>
             </form>}
-
+                    
             {/*       Display List Table */}
             {AllData?.tableHeader && (
               <div className="p-3">
@@ -120,7 +121,8 @@ console.log(tableData,AllData.tableData);
                   </thead>
                   <tbody>
                     {tableData?.map((data, index) => (
-                      <tr key={index}>
+                  
+                      <tr style={(index%2===0?{backgroundColor:"#E9EBEC"}:{backgroundColor:"white"})} key={index}>
                         {Object.keys(data).map(
                           (options, index) =>
                             options !== "id" &&

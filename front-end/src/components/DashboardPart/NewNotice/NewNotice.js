@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { newNotice } from "../fakeData";
+import SingleNotice from "../SingleNotice/SingleNotice";
 import "./NewNotice.css";
 
 const NewNotice = () => {
   const [notice, setNewNotice] = useState();
+  const [showModal, setShowModal] = useState(false);
+  const [singleNotice,setSingleNotice]=useState({});
   useEffect(() => {
     setNewNotice(newNotice);
   }, []);
-
+  const HandleClick=(notice)=>{
+    setShowModal(true)
+    setSingleNotice(notice)
+  }
+  
   return (
     <div className="p-4 NewNotice rounded-xl">
       <div className="noticeHeader flex  items-center">
@@ -21,22 +27,25 @@ const NewNotice = () => {
         <h3>Notice Board</h3>
       </div>
       <div className="noticeBody pt-5">
+        {
+          showModal&&<SingleNotice singleNotice={singleNotice} showModal={showModal} setShowModal={setShowModal}></SingleNotice>
+        }
         <ul>
           {notice?.map((notice, index) =>
             index % 2 === 0 ? (
-              <Link to="allNotice/noticeId">
-                <li className="singleNotice  bg-gray-100">
+              // <Link to={`/allNotice/${notice.id}`}>
+                <li onClick={()=>HandleClick(notice)} className="singleNotice  bg-gray-100">
                   <h6 className="noticeDate">{notice.date}</h6>
                   <h5>{notice.header}</h5>
                 </li>
-              </Link>
+              // {/* </Link> */}
             ) : (
-              <Link to="allNotice/noticeId">
-                <li className="singleNotice bg-white">
+              // <Link to={`/allNotice/${notice.id}`}>
+                <li onClick={()=>HandleClick(notice)} className="singleNotice bg-white">
                   <h6 className="noticeDate">{notice.date}</h6>
                   <h5>{notice.header}</h5>
                 </li>
-              </Link>
+              // </Link>
             )
           )}
         </ul>
