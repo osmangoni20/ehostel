@@ -1,329 +1,203 @@
-import React from "react";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import DashboardHeader from "../../DashboardHeader/DashboardHeader";
-import Sidebar from "../../Sidebar/Sidebar";
-import SidebarManuHeder from "../../SidebarManuHeder/SidebarMenuHeder";
-import '../../Style/inputStyle.css';
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../../../Authentication/Hooks/useAuth";
+import Header from "../../../Homepage/Header";
+// import '../../Style/inputStyle.css';
 import "./Admission.css";
+import InputField from "./InputField";
+import { InputFiledInformation } from "./InputFieldFinformation";
 const Admission = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  const menuHeader="Admission Information";
+  const navigate = useNavigate();
+  const [password, setPassword] = useState({
+    newPassword: "",
+    confirmPassword: "",
+  });
+  const [userData, setUserData] = useState({});
+  const { SignUpWithEmailAndPassword, user, error } = useAuth();
+  const [selectFile, setSelectFile] = useState(null);
+  const [isFilePicked, setFilePicked] = useState(false);
+  // const [emailVerified,setEmailVerified]=useState(false)
+  const [PassWordError, setPassWordError] = useState({
+    errorText: "",
+    confirmPasswordErrorText: "",
+    error: false,
+    confirmPassError: false,
+  });
+
+  // const HandleFileUpload = (e) => {
+  //   setSelectFile(e.target.files[0]);
+  //   console.log(e.target.files);
+  //   const formData = new FormData();
+  //   formData.append("file", selectFile);
+  //   // const url =
+  //   //   "https://freeimage.host/api/1/upload?key=6d207e02198a847aa98d0a2a901485a5";
+  //   // fetch(url, {
+  //   //   method: "POST",
+  //   //   body: formData,
+  //   // })
+  //   //   .then((res) => res.json())
+  //   //   .then((data) => {
+  //   //     console.log(data);
+  //   //     setFilePicked(true);
+  //   //   })
+  //   //   .catch((error) => {
+  //   //     console.log(error);
+  //   //   });
+  // };
+
+  const HandleConfirmPassword = (e) => {
+    setPassword({ ...password, confirmPassword: e.target?.value });
+    console.log(e.target.value)
+    if (password.newPassword !== e.target?.value) {
+      setPassWordError({
+        ...PassWordError,
+        confirmPassError: true,
+        confirmPasswordErrorText: "Password and Confirm Password must be Same",
+      });
+    }else{
+      setPassWordError({
+        ...PassWordError,
+        confirmPassError: false,
+        confirmPasswordErrorText: "",
+      });
+    }
+  };
+
+  const HandlePasswordValidation = (e) => {
+
+    console.log(e.target.value)
+    setPassword({ ...password, newPassword: e.target?.value });
+    const validation = Validation(e.target.value);
+    if (validation) {
+      const Data = { ...userData, password: e.target.value };
+      setUserData(Data);
+    }
+  };
+
+  const Validation = (password) => {
+    if (!/.{8}/.test(password)) {
+      const ErrorMassage = " Ensure Password is of length 8 ";
+      setPassWordError({ errorText: ErrorMassage, error: true });
+    } else if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
+      const PasswordValidation = " Ensure Password is two uppercase letters. ";
+      setPassWordError({ errorText: PasswordValidation, error: true });
+    } else if (!/(?=.*[!@#$&*])/.test(password)) {
+      const PasswordValidation =
+        " Ensure Password is one special case letter. ";
+      setPassWordError({ errorText: PasswordValidation, error: true });
+    } else if (!/(?=.*[0-9].*[0-9])/.test(password)) {
+      const PasswordValidation = " Ensure Password is two digits. ";
+      setPassWordError({ errorText: PasswordValidation, error: true });
+    } else if (!/(?=.*[a-z].*[a-z].*[a-z])/.test(password)) {
+      const PasswordValidation = "Ensure Password is three lowercase letters";
+      setPassWordError({ errorText: PasswordValidation, error: true });
+    } else {
+      setPassWordError({ errorText: "", error: false });
+      return true;
+    }
+  };
+
+  const HandleFormSubmit = (e) => {
+    e.preventDefault();
+    !PassWordError.error && SignUpWithEmailAndPassword(userData);
+    // const formData = new FormData();
+
+    // formData.append(userData[0], selectFile);
+  };
+const HandleFileInputValue=(e)=>{
+  const data={...userData,[e.target.name]:e.target.files[0]};
+  setUserData(data)
+}
+const HandleFieldValue=(e)=>{
+  const data={...userData,[e.target.name]:e.target.value};
+  setUserData(data)
+}
+ 
+  console.log()
+  // const menuHeader="Admission Information";
   return (
     <div>
-      <DashboardHeader></DashboardHeader>
-      <div className="flex">
-        <aside className="h-screen sticky top-0 overflow-hidden">
-          <Sidebar></Sidebar>
-        </aside>
-        <main>
-          <SidebarManuHeder menuHeader={menuHeader}></SidebarManuHeder>
-          <div className="admission">
-            <div className="admissionHeader flex items-center">
-              <ion-icon name="people-outline"></ion-icon>
-              <h6 className="text-xl px-2">Admission Information</h6>
-            </div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="grid grid-cols-3 gap-3">
-                <div class="input-icons">
-                  <h5>Full Name </h5>
-                  <i class="fa fa-user icon"></i>
-                  <input
-                    placeholder="Full Name"
-                    className="input-filed"
-                    {...register("full_name", { required: true })}
-                  />
-                  {errors.full_name && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
+        <Header></Header>
+
+          
+          <div className="signUp-container ">
+            <div className="form-container">
+            <h1 className="title">Registration</h1>
+              <form onSubmit={HandleFormSubmit}>
+                <div className="form-input-field">
+                {
+                  InputFiledInformation.map((data,index)=><InputField key={index} HandleFieldValue={HandleFieldValue}  HandleFileInputValue={ HandleFileInputValue} fieldInfo={data}></InputField>)
+                }
+                <div>
+                  <h5> Password</h5>
+
+                  <div className="input-filed">
+                    <FontAwesomeIcon className="input-icon" icon={faUser} />
+                    <input
+                      onBlur={HandlePasswordValidation}
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                     required
+                    />
+                  </div>
+                  {PassWordError.error && (
+                      <p className="inputFieldError">
+                        {PassWordError.errorText}
+                      </p>
+                    )}
                 </div>
 
-                <div class="input-icons">
-                  <h5>Student Id</h5>
-                  <i class="fa fa-user icon"></i>
-                  <input
-                    placeholder="Student Id"
-                    className="input-filed"
-                    {...register("id", { required: true })}
-                  />
-                  {errors.id && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
-                <div class="input-icons">
-                  <h5>Cell No</h5>
-                  <i class="fa fa-user icon"></i>
-                  <input
-                    placeholder="Mobile No"
-                    className="input-filed"
-                    {...register("mobile", { required: true })}
-                  />
-                  {errors.mobile && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-                {/* Department */}
-                <div class="input-icons">
-                  <h5>Department</h5>
-                  <i class="fa fa-user icon"></i>
-                  <select
-                    className="input-filed"
-                    {...register("department", { required: true })}
-                  >
-                    <option value="cst">CST</option>
-                    <option value="tct">TCT</option>
-                    <option value="other">other</option>
-                  </select>
-                  {errors.department && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
-                    {/* Semester */}
-                <div class="input-icons">
-                  <h5>Semester</h5>
-                  <i class="fa fa-user icon"></i>
-                  <select
-                    className="input-filed"
-                    {...register("semester", { required: true })}
-                  >
-                    <option value="2nd">2nd</option>
-                    <option value="3rd">3rd</option>
-                    <option value="4th">4th</option>
-                    <option value="5th">5th</option>
-                    <option value="6th">6th</option>
-                    <option value="7th">7th</option>
-                  </select>
-                  {errors.semester && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
-                    {/* Shift */}
-                <div class="input-icons">
-                  <h5>Shift</h5>
-                  <i class="fa fa-user icon"></i>
-                  <select
-                    className="input-filed"
-                    {...register("shift", { required: true })}
-                  >
-                    <option value="first">First</option>
-                    <option value="second">Second</option>
-                    
-                  </select>
-                  {errors.shift && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
-                {/* Email */}
-                <div class="input-icons">
-                  <h5>Email</h5>
-                  <i class="fa fa-user icon"></i>
-                  <input
-                    type="email"
-                    placeholder="Email Id"
-                    className="input-filed"
-                    {...register("email", { required: true })}
-                  />
-                  {errors.email && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
-                <div class="input-icons">
-                  <h5>Password</h5>
-                  <i class="fa fa-user icon"></i>
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    className="input-filed"
-                    {...register("password", { required: true })}
-                  />
-                  {errors.password && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
-                <div class="input-icons">
+                <div>
                   <h5>Confirm Password</h5>
-                  <i class="fa fa-user icon"></i>
-                  <input
-                    type={"password"}
-                    placeholder="Confirm Password"
-                    className="input-filed"
-                    {...register("confirm_password", { required: true })}
-                  />
-                  {errors.confirm_password && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
 
-                    {/* Blood Group */}
-                    <div class="input-icons">
-                  <h5>Blood Group</h5>
-                  <i class="fa fa-user icon"></i>
-                  <input
-                    type={"text"}
-                    placeholder="Blood Group"
-                    className="input-filed"
-                    {...register("blood_group", { required: true })}
-                  />
-                  {errors.blood_group && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
+                  <div className="input-filed">
+                    <FontAwesomeIcon className="input-icon" icon={faUser} />
+                    <input
+                      type={"password"}
+                      onChange={HandleConfirmPassword}
+                      name="confirm_password"
+                      placeholder="Confirm Password"
+                      required
+                    />
+                  </div>
+                  {PassWordError.confirmPassError && (
+                      <p className="inputFieldError">
+                        {PassWordError.confirmPasswordErrorText}
+                      </p>
+                    )}
                 </div>
-                    {/* Batch No */}
-                <div class="input-icons">
-                  <h5>Batch</h5>
-                  <i class="fa fa-user icon"></i>
-                  <input
-                    type="text"
-                    placeholder="Batch"
-                    className="input-filed"
-                    {...register("batch", { required: true })}
-                  />
-                  {errors.batch && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
                 </div>
-
-                {/* Gender */}
-                <div class="input-icons">
-                  <h5>Gender</h5>
-                  <i class="fa fa-user icon"></i>
-                  <select
-                    className="input-filed"
-                    {...register("gender", { required: true })}
-                  >
-                    <option value="first">Male</option>
-                    <option value="second">Female</option>
-                    
-                  </select>
-                  {errors.gender && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
-                     {/* Date Of Birth */}
-                <div class="input-icons">
-                  <h5>Date Of Birth</h5>
-                  <i class="fa fa-user icon"></i>
-                  <input
-                    type="date"
-                    placeholder="Date Of Birth"
-                    className="input-filed"
-                    {...register("date_of_birth", { required: true })}
-                  />
-                  {errors.date_of_birth && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
-                    
-                    {/* Student Photo */}
-                <div class="input-icons">
-                  <h5>Student Photo</h5>
-                  {/* <i class="fa fa-user icon"></i> */}
-                  <input
-                    type={"file"}
-                    placeholder="Student Photo"
-                    className="input-filed"
-                    {...register("image", { required: true })}
-                  />
-                  {errors.image && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-                 {/* Nationality */}
-                 <div class="input-icons">
-                  <h5>Nationality</h5>
-                  <i class="fa fa-user icon"></i>
-                  <input
-                    type={"text"}
-                    placeholder="Nationality"
-                    className="input-filed"
-                    {...register("nationality", { required: true })}
-                  />
-                  {errors.nationality && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-                {/* Student NID */}
-                <div class="input-icons">
-                  <h5>Student NID</h5>
-                  {/* <i class="fa fa-user icon"></i> */}
-                  <input
-                    type={"file"}
-                    placeholder="Student NID"
-                    className="input-filed"
-                    {...register("student_nid", { required: true })}
-                  />
-                  {errors.student_nid && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
-                {/* Student Registration Card*/}
-                <div class="input-icons">
-                  <h5>Student Reg. Card</h5>
-                  {/* <i class="fa fa-user icon"></i> */}
-                  <input
-                    type={"file"}
-                    placeholder="Student Registration Card"
-                    className="input-filed"
-                    {...register("student_reg", { required: true })}
-                  />
-                  {errors.student_reg && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
-                {/* Father/Mather Nid*/}
-                <div class="input-icons">
-                  <h5>Father/Mather NID</h5>
-                  {/* <i class="fa fa-user icon"></i> */}
-                  <input
-                    type={"file"}
-                    placeholder="Father/Mather NID"
-                    className="input-filed"
-                    {...register("guardian_nid", { required: true })}
-                  />
-                  {errors.guardian_nid && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
-                {/* Address */}
-                <div class="input-icons">
-                  <h5>Address</h5>
-                  {/* <i class="fa fa-user icon"></i> */}
-                  <textarea
-                    type={"text"}
-                  
-                    className="input-filed"
-                    {...register("address", { required: true })}
-                  />
-                  {errors.address && (
-                    <span style={{ color: "red" }}>This field is required</span>
-                  )}
-                </div>
-
+                <div className="Submit-button">
                 
-              </div>
+                {isFilePicked ? (
+        <input  type="submit" value={"SignUp"} className="btn" />
 
-              <br />
-              <input className="submitBtn" type="submit" />
-            </form>
-          </div>
-        </main>
-      </div>
-    </div>
+            ) : (
+              <input  type="submit" value={"SignUp"} className="btn" />
+            )}
+             
+               
+                </div>
+              </form>
+              <p>Already have an account?
+              <Link to={"/login"}>
+              <span>
+                  log in
+                </span>
+              </Link>
+              </p>
+            </div>
+          </div>     
+  </div>
   );
 };
 

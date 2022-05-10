@@ -4,7 +4,7 @@ import DashboardHeader from "../DashboardHeader/DashboardHeader";
 import MenuOptionsHeader from "../MenuOptionsHeader/MenuOptionsHeader";
 import Sidebar from "../Sidebar/Sidebar";
 import SidebarMenuHeder from "../SidebarManuHeder/SidebarMenuHeder";
-import "../Style/inputStyle.css";
+// import "../Style/inputStyle.css";
 import '../Style/tableStyle.css';
 import "./DataInput.css";
 const DataInputAndList = ({ AllData,Submenu }) => {
@@ -51,16 +51,20 @@ console.log(tableData,AllData.tableData);
             ></MenuOptionsHeader>
 
             {/* Input Form */}
-            {AllData.inputFieldData&&<form onSubmit={handleSubmit(onSubmit)}>
-              <div className="grid grid-cols-3 gap-3 my-5 px-3">
+            <div className="mainInputField-container">
+                <div className="">
+                {AllData.inputFieldData&&<form onSubmit={handleSubmit(onSubmit)}>
+              <div className="form-input-field">
                 {AllData.inputFieldData.map((inputField) => (
-                  <div class="input-icons">
+
+
+                  <div>
                     <h5>{inputField.name} </h5>
-                    {inputField.icon && <i class={inputField.icon}></i>}
+                    <div className="input-filed">
+                    {inputField.icon && <i class="fa fa-user input-icon"></i>}
 
                     {inputField.selectOptions && (
                       <select
-                        className="input-filed"
                         {...register(inputField.registerName, {
                           required: true,
                         })}
@@ -70,26 +74,34 @@ console.log(tableData,AllData.tableData);
                         ))}
                       </select>
                     )}
+                    
+                    
                     {inputField.inputType && (
+                     
                       <input
                         type={inputField.inputType}
+                        defaultValue={inputField.default}
                         placeholder={inputField.placeholderName}
-                        className="input-filed"
                         {...register(inputField.registerName, {
                           required: true,
                         })}
                       />
+                     
                     )}
+                    
+                    
                     {inputField.textAria && (
+                     
                       <textarea
                         type={"text"}
                         rows="4"
                         cols="50"
-                        className="input-filed col-span-2"
+                        className="col-span-2"
                         {...register(inputField.registerName, {
                           required: true,
                         })}
                       />
+                      
                     )}
 
                     {errors[inputField.registerName] && (
@@ -97,18 +109,22 @@ console.log(tableData,AllData.tableData);
                         This field is required
                       </span>
                     )}
+                    </div>
                   </div>
                 ))}
               </div>
               <div className="flex justify-center">
                 <input
                   value={submitValue}
-                  className="submitBtn"
+                  className="btn"
                   type="submit"
                 />
               </div>
               <hr className="my-5"></hr>
             </form>}
+                </div>
+            </div>
+            
                     
             {/*       Display List Table */}
             {AllData?.tableHeader && (

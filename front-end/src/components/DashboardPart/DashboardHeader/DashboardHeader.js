@@ -1,11 +1,20 @@
 import React from "react";
+import useAuth from "../../../Authentication/Hooks/useAuth";
 import activePerson from '../../../image/logo.jpg';
+import '../Dashboard/Dashboard.css';
 const DashboardHeader = () => {
+  const{user}=useAuth();
   return (
-    <div className="shadow-md w-full bg-white d-block">
-      <div className="md:flex items-center justify-between bg-white py-2 md:px-10 px-7">
+    <div className="shadow-md w-full bg-white ">
+      <div className="md:flex flex items-center justify-between bg-white py-2 md:px-10 px-7">
+        
+        <div className="font-bold text-2xl text-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+      </svg>
+        </div>
         <div
-          className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
+          className=" font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
       text-gray-800"
         >
           <span className="text-3xl text-indigo-600 mr-1 pt-2">
@@ -24,7 +33,7 @@ const DashboardHeader = () => {
           </span>
           <span className="pt-2 text-xl font-normal">eHostel</span>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center userName">
             <img style={{
                   height: "20px",
                   width: "20px",
@@ -32,7 +41,8 @@ const DashboardHeader = () => {
                   marginRight: "4px",
                   marginBottom: "3px"
             }} src={activePerson} alt="personLogo" />
-       <h2> User Name</h2>
+       <h2> {user.email?user.displayName:""}</h2>
+      
         </div>
       </div>
     </div>

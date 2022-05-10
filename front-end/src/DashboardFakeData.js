@@ -281,8 +281,21 @@ export const DashboardFakeData =
                 placeholderName:"Amount",
                 icon:"fa fa-user icon",
                 inputType:"number"
-              
-            
+            },
+            {
+                name:"Payment Type",
+                registerName:"payment_type",
+                placeholderName:"Payment Type",
+                inputType:null,
+                icon:"fa fa-user icon",
+                selectOptions:[
+                    {name:"Meal",value:"meal"},
+                    {name:"Monthly Bil",value:"monthly-bill"},
+                    {name:"Wifi Bil",value:"wifi-bill"},
+                    {name:"Sports Bill",value:"sports-bill"},
+                    {name:"Ceremony Bill",value:"ceremony-bill"},
+                ],
+                search:true
             },
             {
                 name:"Paid By",
@@ -370,6 +383,66 @@ export const DashboardFakeData =
         sidebarMenuHeader:"Payment View",
         menuOptionHeader:{
             name:"Student Payment List",
+            icon:"people-outline"}
+    },
+    payment_details:{
+        inputFieldData:[
+            {
+                name:"Payment Type",
+                registerName:"payment_type",
+                placeholderName:"Payment Type",
+                inputType:null,
+                icon:"fa fa-user icon",
+                selectOptions:[
+                    {name:"Meal",value:"meal"},
+                    {name:"Monthly Bil",value:"monthly-bill"},
+                    {name:"Wifi Bil",value:"wifi-bill"},
+                    {name:"Sports Bill",value:"sports-bill"},
+                    {name:"Ceremony Bill",value:"ceremony-bill"},
+                ],
+                search:true
+            },
+        ],
+            tableHeader:[
+            "Name","Amount","paymentType","Paid By","Transaction/Mobile No","Date","Action"
+        ],
+        tableData:[
+            {
+                id:1,
+                name:"Mohammad Osman Goni",
+                amount:3000,
+                paymentType:"Meal",
+                paidBy:"Bank",
+                paymentUniqId:"20412536",
+                date:"20-2-2022",
+                action:true
+            },
+            {id:2,
+                name:"Mohammad Salah",
+                amount:2500,
+                paymentType:"Sports Bill",
+                paidBy:" Bkash",
+               
+                paymentUniqId:"30412536",
+                date:"22-2-2022",
+                action:true
+            },
+            {id:3,
+                name:"Mohammad Tahmid Goni",
+                amount:5000,
+                paymentType:"Wifi Bill",
+                paidBy:" Rocket",
+                
+                paymentUniqId:"def5dwe5225de36",
+                date:"20-3-2022",
+                action:true
+            }
+        ]
+        ,
+        
+        sidebarMenuHeader:"Payment View",
+        menuOptionHeader:{
+            name:"Payment List",
             icon:"people-outline"}
     },
     notice:{
@@ -483,7 +556,36 @@ export const DashboardFakeData =
             icon:"people-outline"},
         sidebarMenuHeader:"Bill Add"
     },
-
+    add_guest_meal:{
+        inputFieldData:[
+            {
+                name:"Client Name",
+                registerName:"studentName",
+                icon:"fa fa-user icon",
+                placeholderName:"Client Name",
+                inputType:"text",
+                default:"Guest"
+            },
+            {
+                name:"Number Of Meal",
+                icon:"fa fa-user icon",
+                registerName:"totalMeal",
+                placeholderName:"Total Meal",
+                inputType:"number"
+            },
+          
+            {
+                name:"Date",
+                registerName:"date",
+                placeholderName:"Date",
+                inputType:"date"
+            }
+        ],
+        menuOptionHeader:
+        {name:"Guest Meal Add Information",
+            icon:"people-outline"},
+        sidebarMenuHeader:"Guest Meal Add"
+    },
     add_new_meal:{
         inputFieldData:[
             {
@@ -507,9 +609,9 @@ export const DashboardFakeData =
                 placeholderName:"Date",
                 inputType:"date"
             },{
-                name:"Unique Id",
+                name:"Roll No",
                 registerName:"id",
-                placeholderName:"Any Unique Id",
+                placeholderName:"Student Roll No",
                 icon:"fa fa-user icon",
                 inputType:"text",
                 

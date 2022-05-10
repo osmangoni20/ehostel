@@ -25,7 +25,9 @@ const Header = () => {
           <span class='ml-3 text-xl'>eHostel</span>
         </a>
         <Navbar />
+        
         <Button />
+        
       </div>
     </header>
   )

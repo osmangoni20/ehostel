@@ -1,4 +1,37 @@
-const SidebarData = [
+
+
+export const userSidebarMenu=[
+  
+    {
+      name: "Dashboard",
+      link: "/dashboard",
+      icon: "grid-outline",
+    },
+    {
+      name: "Meal Manage",
+      icon: "fast-food-outline",
+      subOptions: [
+        { name: "Add New Meal", link: "/dashboard/add_new_meal" },
+        { name: "Meal List", link: "/dashboard/meal_list" },
+      ],
+    },
+    {
+      name: "Payment",
+      icon: "logo-paypal",
+      subOptions: [
+        { name: "Pay", link: "/dashboard/add_payment" },
+        { name: "Payment Details", link: "/dashboard/payment_details" },
+      ],
+    },
+    {
+      name: "Notice",
+      link: "/dashboard/notice",
+      icon: "notifications-outline",
+    },
+]
+
+
+export const  adminSidebarMenu = [
   {
     name: "Dashboard",
     link: "/dashboard",
@@ -25,6 +58,7 @@ const SidebarData = [
     icon: "fast-food-outline",
     subOptions: [
       { name: "Add New Meal", link: "/dashboard/add_new_meal" },
+      { name: "Add Guest Meal", link: "/dashboard/add_guest_meal" },
       { name: "Meal List", link: "/dashboard/meal_list" },
     ],
   },
@@ -32,7 +66,6 @@ const SidebarData = [
     name: "Students Manage",
 
     subOptions: [
-      { name: "Student Admission", link: "/dashboard/student_admission" },
 
       {
         name: "Student List",
@@ -63,14 +96,14 @@ const SidebarData = [
     link: "/dashboard/employee_manage",
     icon: "people-circle-outline",
   },
-  {
-    name: "Bill Manage",
-    icon: "newspaper-outline",
-    subOptions: [
-      { name: "Add New ", link: "/dashboard/add_bill" },
-      { name: "List View", link: "/dashboard/bill_list" },
-    ],
-  },
+  // {
+  //   name: "Bill Manage",
+  //   icon: "newspaper-outline",
+  //   subOptions: [
+  //     { name: "Add New ", link: "/dashboard/add_bill" },
+  //     { name: "List View", link: "/dashboard/bill_list" },
+  //   ],
+  // },
   {
     name: "Notice Board",
     icon: "notifications-outline",
@@ -86,4 +119,4 @@ const SidebarData = [
     icon: "person-add-outline",
   },
 ];
-export default SidebarData;
+

@@ -12,9 +12,16 @@ const Dashboard = () => {
   // setNewNotice()
 const menuHeader="Dashboard";
 
-
+const admin=true;
 const totalMeal=DashboardFakeData.meal_list.tableData.reduce((preValue,currValue)=>preValue+currValue.numberOfMeal,0);
-const cardData=[
+const userCartData=[
+  {
+    id:4,
+    name:"Today's Meal",
+    total:3
+}
+]
+const adminCardData=[
   {
       id:1,
       name:"Total Employee",
@@ -34,26 +41,28 @@ const cardData=[
       id:4,
       name:"Today's Meal",
       total:totalMeal
-  },
+  }
 ]
+
+const cardData=admin?adminCardData:userCartData;
   return (
     <div className="dashboard">
       <DashboardHeader></DashboardHeader>
 
-      <div className="flex">
-        <aside className="h-screen sticky top-0 overflow-hidden">
+      <div className="dashboardBody">
+        <aside className="h-screen  ">
           <Sidebar></Sidebar>
         </aside>
 
         <main>
           <SidebarManuHeder menuHeader={menuHeader}></SidebarManuHeder>
-          <div className="flex flex-wrap justify-between mt-5">
+          <div className= {admin?`flex flex-wrap justify-between mt-5 mb-2`:`flex justify-center mt-5 mb-2`}>
             {cardData.map((cardData) => (
               <DashboardCard key={cardData.id} card={cardData}></DashboardCard>
             ))}
           </div>
           {/* */}
-          <div className="mt-9 grid grid-cols-2 gap-5 ">
+          <div className="mt-9 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 ">
             <div className=" bg-white rounded-xl">
               <CostChart></CostChart>
             </div>

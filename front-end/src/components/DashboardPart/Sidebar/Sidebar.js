@@ -1,10 +1,15 @@
 import React from "react";
+import useAuth from "../../../Authentication/Hooks/useAuth";
 import activePerson from "../../../image/logo.jpg";
 import "./Sidebar.css";
-import SidebarData from "./SidebarData";
+import { adminSidebarMenu, userSidebarMenu } from "./SidebarData";
 import SubMenu from "./SubMenu";
 
 const Sidebar = () => {
+
+  const{user}=useAuth();
+  const admin=true;
+  const sidebarMenu=admin?adminSidebarMenu:userSidebarMenu;
   return (
     <div className="sidebar h-screen">
       <div className="pl-3 dashboardLogo flex justify-between">
@@ -22,8 +27,8 @@ const Sidebar = () => {
           />
 
           <div>
-            <h2> User Name</h2>
-            <p>Student</p>
+            <h2>{user.email?user.displayName.slice(0,14) +'.':"User Name"}</h2>
+            <p>{admin?"Admin":"Student"}</p>
           </div>
         </div>
         <div className="pr-2">
@@ -44,7 +49,7 @@ const Sidebar = () => {
         </div>
       </div>
 
-      {SidebarData.map((menu, index) => (
+      {sidebarMenu.map((menu, index) => (
         <SubMenu item={menu} key={index}></SubMenu>
       ))}
     </div>

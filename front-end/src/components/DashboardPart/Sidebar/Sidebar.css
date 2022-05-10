@@ -7,8 +7,11 @@
 }
 .dashboardLogo h2 {
   font-size: 18px;
+  overflow: hidden;
+  height: 20px;
 }
 .dashboardLogo p {
+  text-align: left;
   font-size: 12px;
 }
 .sidebar li {

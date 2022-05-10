@@ -1,5 +1,8 @@
 aside {
   width: 20%;
+  position: sticky;
+  overflow: hidden;
+  top: 0;
 }
 main {
   width: 80%;
@@ -8,6 +11,10 @@ main {
 .dashboard {
   background-color: #f2edf3;
 }
+
+.dashboardBody {
+  display: flex;
+}
 .dashboard .active-menu {
   height: 60px;
   padding: 10px;
@@ -15,7 +22,36 @@ main {
   font-weight: 600;
   border-bottom: 2px solid rgb(207, 204, 204);
 }
-
+@media (max-width: 570px) {
+  .userName {
+    display: none;
+  }
+  .dashboardBody {
+    display: block;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+  .aside {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+  main {
+    width: 100%;
+    padding: 0px 5px;
+  }
+}
+@media (max-width: 870px) {
+  aside {
+    width: auto;
+  }
+  main {
+    width: 80%;
+    padding: 0px 15px;
+  }
+}
 /* .NewNotice .noticeHeader,
 .chartHeader {
   background-color: rgb(99, 223, 212);

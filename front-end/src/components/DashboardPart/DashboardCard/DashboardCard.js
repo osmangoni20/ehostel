@@ -1,12 +1,12 @@
 import React from "react";
 import "./DashboardCard.css";
 const DashboardCard = ({ card }) => {
-  const { total, name, image } = card;
-  console.log(image);
+  const { total, name } = card;
   // style={{backgroundColor:bgColor}}
   const dashboardCard= {
     width: "240px",
     padding: "10px",
+    margin:"12px 1px",
     borderRadius: "5px",
     background: "linear-gradient(80deg, #ffb996 20%, #ff7c96)"
   }
@@ -25,7 +25,7 @@ const DashboardCard = ({ card }) => {
     dashboardCard.background="linear-gradient(80deg, #FFC27C 20%, #FF9020)"
   }
   return (
-    <div style={dashboardCard} className="">
+    <div style={dashboardCard}>
       <div className="cardText flex justify-center items-center">
         <div className="">
           <h2>{total}</h2>
