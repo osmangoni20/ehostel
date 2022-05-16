@@ -89,11 +89,58 @@ export const DashboardFakeData =
         name:"Students Seat Allocation",icon:"people-outline"}
        ,sidebarMenuHeader:"Seat Allocation"
     },
+    request_new_admission:{
+        inputFieldData:[
+            {
+                name:"Student Email",
+                registerName:"email",
+                placeholderName:"Student Email",
+                inputType:"email",
+                icon:"fa fa-user icon",
+                search:true
+            }
+        ],
+        tableHeader:[
+            "Name","Phone Number","Department","Email",
+            "Shift","Action"
+        ],
+        tableData:[
+            {
+                id:1,
+                name:"Mohammad Osman Goni",
+                mobile:"0187584254",
+                Department:"CST",
+                email:"osman@gmai.com",
+                Shift:"First",
+            
+                actionType:"select"
+            },
+            {id:2,
+                name:"Mohammad Salah",
+                mobile:"0187584254",
+                Department:"DTNT",
+                email:"salah@gamil.com",
+                Shift:"First",
+                actionType:"select"
+            },
+            {id:3,
+                name:"Mohammad Tahmid Goni",
+                mobile:"0187584264",
+                Department:"TCT",
+                email:"tahmid@gmail.com",
+                Shift:"Second",
+                actionType:"select"
+            }
+        ],
+      
+        sidebarMenuHeader:"New Request",
+        menuOptionHeader:{name:"New Request List",icon:"people-outline"},
+   
+    },
     student_list:{
         tableHeader:[
             "Name","Mobile No","Department","Guardian Number",
             "Shift","Action"
-    
         ],
         tableData:[
             {

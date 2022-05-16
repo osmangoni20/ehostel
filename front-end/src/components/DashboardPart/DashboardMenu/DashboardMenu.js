@@ -6,10 +6,10 @@ import DataInputAndList from "../DataInputAndList/DataInputAndList";
 const DashboardMenu = () => {
   const { route } = useParams();
   const AllData = DashboardFakeData[route];
-
+  const modelView=(route===("request_new_admission"||"student_list"))?true:false;
   return (
     <div>
-      <DataInputAndList Submenu={route} AllData={AllData}></DataInputAndList>
+      <DataInputAndList modelView={modelView} AllData={AllData}></DataInputAndList>
     </div>
   );
 };

@@ -37,22 +37,6 @@ export const  adminSidebarMenu = [
     link: "/dashboard",
     icon: "grid-outline",
   },
-  
-  {
-    name: "Room Manage",
-    icon: "bed-outline",
-    subOptions: [
-      { name: "Room", link: "/dashboard/room" },
-    ],
-  },
-  {
-    name: "Cost Manage",
-    icon: "calculator-outline",
-    subOptions: [
-      { name: "Add New ", link: "/dashboard/add_new_cost" },
-      { name: "List View", link: "/dashboard/cost_list" },
-    ],
-  },
   {
     name: "Meal Manage",
     icon: "fast-food-outline",
@@ -66,7 +50,11 @@ export const  adminSidebarMenu = [
     name: "Students Manage",
 
     subOptions: [
-
+      {
+        name: "New Request",
+        countNumber:true,
+        link: "/dashboard/request_new_admission",
+      },
       {
         name: "Student List",
         link: "/dashboard/student_list",
@@ -82,6 +70,23 @@ export const  adminSidebarMenu = [
     ],
     icon: "people-outline",
   },
+  {
+    name: "Room Manage",
+    icon: "bed-outline",
+    subOptions: [
+      { name: "Room", link: "/dashboard/room" },
+    ],
+  },
+  {
+    name: "Cost Manage",
+    icon: "calculator-outline",
+    subOptions: [
+      { name: "Add New ", link: "/dashboard/add_new_cost" },
+      { name: "List View", link: "/dashboard/cost_list" },
+    ],
+  },
+  
+  
 
   {
     name: "Students Payment",

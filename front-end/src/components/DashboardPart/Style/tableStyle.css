@@ -3,23 +3,26 @@ table {
   text-align: center;
 }
 table thead {
-  height: 30px;
   padding: 5px;
+  /* background-color: #5995fd; */
+  color: rgb(53, 52, 52);
+  margin-bottom: 10px;
+  border-bottom: 2px solid gray;
 }
 table thead th {
   font-size: 20px;
   font-weight: 600;
   text-align: center;
   padding: 8px;
-  /* border: 2px solid gray; */
 }
 table tbody tr {
-  height: 20px;
-  /* border: 2px solid gray; */
+  margin-top: 10px;
+  border-radius: 10px;
+  /* border-bottom: 1px solid gray; */
 }
 table tbody tr td {
-  font-size: 18px;
-  padding: 8px;
+  font-size: 17px;
+  padding: 10px;
   /* border: 2px solid gray; */
 }
 .edit-icon {

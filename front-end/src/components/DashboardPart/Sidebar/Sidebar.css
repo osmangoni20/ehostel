@@ -25,3 +25,11 @@
   box-shadow: 5px rgb(246, 243, 243);
   align-items: center;
 }
+.request-number {
+  width: 20px;
+  padding: 0.4rem;
+  background-color: red;
+  color: #fff;
+  height: 24px;
+  border-radius: 50%;
+}

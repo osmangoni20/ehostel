@@ -17,6 +17,7 @@ select {
   /* min-height: 200vh; */
   background-color: #fff;
   /* overflow: hidden; */
+  padding-bottom: 20px;
 }
 .signUp-container .form-container {
   position: absolute;
@@ -34,7 +35,8 @@ select {
 }
 .signUp-container .form-container h5 {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
+  color: #444;
 }
 .signUp-container .form-container form .form-input-field {
   display: grid;
@@ -54,6 +56,7 @@ select {
   font-size: 16px;
   color: #4d84e2;
   text-align: center;
+  padding-bottom: 20px;
 }
 .signUp-container .form-container p span {
   font-weight: 600;

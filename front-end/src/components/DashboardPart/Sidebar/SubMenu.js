@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import './Sidebar.css';
 const SubMenu = ({ item }) => {
   const [showOptions, setShowOptions] = useState(false);
   const ShowSubNav = () => {
@@ -25,11 +25,15 @@ const SubMenu = ({ item }) => {
           <ion-icon name={item.icon}></ion-icon>
 
           {item.subOptions ? (
-            <span className="pl-1">{item.name}</span>
+          
+             <span className="pl-1">{item.name}</span>
+               
           ) : (
-            <Link to={item.link} className="pl-1">
+            <Link to={item.link} className="pl-1 ">
               {item.name}
             </Link>
+
+            
           )}
         </div>
         {!item.subOptions && (
@@ -79,13 +83,18 @@ const SubMenu = ({ item }) => {
                 height:"40px",
                 width: "100%",
                 color: "black",
+                display:"flex",
+                justifyContent:"space-between",
                 fontSize: "17px", //important
               }}
               className="block hover:bg-gray-200 hover:text-black p-0 text-lg text-gray hover:#261e1e dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
             >
-              <Link to={item.link} className="block px-10 ">
+              <Link to={item.link} className="block px-10 pr-1">
                 {item.name}
+               
               </Link>
+              {item.countNumber&& <span className="request-number">1</span>
+            }
             </li>
           );
         })}
